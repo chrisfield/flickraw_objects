@@ -1,8 +1,10 @@
 # FlickrawObjects
 
-Use this gem as a simple way to map Flickraw results to a object-orientated "data model".
-Classes for People and Photos are included: These are there by way of an example. I anticipate 
-users of this Gem will map the data they need - it's easy to do.
+A slim, customisable object-oriented Flickr api that uses flickraw to do all the communication.
+Use this gem as a simple way to use Flickraw but with an object-orientated "data model".
+Classes for Person, Photoset and Photos are included. I anticipate 
+users of this Gem will map other data they need. Look at flickraw_objects.rb to see how objects are make 
+Flickraw requests and define the attributes in the response.
 
 ## Installation
 
@@ -23,10 +25,11 @@ Or install it yourself as:
 Create an initializer where you set your Flickr credentials.
 
 ```ruby
-FlickrawObjects.configure do |config|
-  config.api_key = "Your Api Key"
-  config.shared_secret = "Shared Secret"
-end
+require "flickraw"
+require "flickraw_objects"
+
+FlickRaw::api_key = "12345678901234567890123456789012"
+FlickRaw::shared_secret = "abcdefghijkl"
 ```
 If you don't have them yet, you can apply for them [here](http://www.flickr.com/services/apps/create/apply).
 
@@ -34,15 +37,12 @@ If you don't have them yet, you can apply for them [here](http://www.flickr.com/
 Example usage:
 
 ```ruby
-person = FlickrawObjects::Person.find_by_username "chrisfield1968"
-puts "realname: #{person.realname}" # get_info api call happens automatically
-
-puts "photos_count #{person.photos_count}"                # returns as an Integer
-puts "person.first_date_taken #{person.first_date_taken}" # returns as a Date
-puts "professional?: #{person.professional?}"             # returns as a true/false
-
-person.get_photos.each_with_index do |item,i|
-  puts "item #{i}: #{item.title} - #{item.url} - #{item.public?}"
+me = FlickrawObjects::Person.find_by_username('your-flickr-name')
+mySets = me.photosets
+theSet = mySets.find {|y| y.title == "Some Album Title"}
+thePhotos=theSet.photos
+thePhotos.each do |pic|
+  puts "#{pic.title} Small: (#{pic.url_small})"
 end
 ```
 
