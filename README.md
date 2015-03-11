@@ -48,6 +48,6 @@ end
 
 ## Contributing
 
-I'm happy to recieve pull requests or to add simple things to the data model
-However I'd like the data model to remain quite minimal because to do otherwise
+I'm happy to recieve pull requests or to add simple things to the data model,
+however, I'd like the data model to remain quite minimal because to do otherwise
 would erode the introspection benefits of flickraw.
