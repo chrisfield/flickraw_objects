@@ -3,7 +3,7 @@
 A slim, customisable object-oriented Flickr api that uses flickraw to do all the communication.
 Use this gem as a simple way to use Flickraw but with an object-orientated "data model".
 Classes for Person, Photoset and Photos are included. I anticipate 
-users of this Gem will map other data they need. Look at flickraw_objects.rb to see how objects are make 
+users of this Gem will map other data they need. Look at flickraw_objects.rb to see how objects make 
 Flickraw requests and define the attributes in the response.
 
 ## Installation
@@ -48,8 +48,6 @@ end
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/flickraw_objects/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+I'm happy to recieve pull requests or to add simple things to the data model
+However I'd like the data model to remain quite minimal because to do otherwise
+would erode the introspection benefits of flickraw.
