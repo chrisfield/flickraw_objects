@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-Create an initializer where you set your Flickr credentials.
+Set your Flickr credentials using flickraw.
 
 ```ruby
 require "flickraw"
@@ -32,7 +32,6 @@ FlickRaw::api_key = "12345678901234567890123456789012"
 FlickRaw::shared_secret = "abcdefghijkl"
 ```
 If you don't have them yet, you can apply for them [here](http://www.flickr.com/services/apps/create/apply).
-
 
 Example usage:
 
