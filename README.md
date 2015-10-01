@@ -33,7 +33,21 @@ FlickRaw::shared_secret = "abcdefghijkl"
 ```
 If you don't have them yet, you can apply for them [here](http://www.flickr.com/services/apps/create/apply).
 
-Example usage:
+Example: Finding a particular Photo:
+
+```ruby
+pic = FlickrawObjects::Photo.find_by_id('9483891183')
+puts pic.title
+```
+
+Example: Finding a particular album:
+
+```ruby
+Pics = FlickrawObjects::Photoset.find_by_id('72157635151450677')
+puts "#{fieldPics.title}: #{fieldPics.photos.length}"
+```
+
+Example: Finding a named album for a given user:
 
 ```ruby
 me = FlickrawObjects::Person.find_by_username('your-flickr-name')
@@ -44,6 +58,7 @@ thePhotos.each do |pic|
   puts "#{pic.title} Small: (#{pic.url_small})"
 end
 ```
+
 
 ## Contributing
 
