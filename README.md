@@ -43,8 +43,8 @@ puts pic.title
 Example: Finding a particular album:
 
 ```ruby
-Pics = FlickrawObjects::Photoset.find_by_id('72157635151450677')
-puts "#{fieldPics.title}: #{fieldPics.photos.length}"
+pics = FlickrawObjects::Photoset.find_by_id('72157635151450677')
+puts "#{pics.title}: #{pics.photos.length}"
 ```
 
 Example: Finding a named album for a given user:
